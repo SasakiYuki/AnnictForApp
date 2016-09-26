@@ -17,7 +17,7 @@ class OAuthQueryBuilder(val code:String) {
                 put(OAuthHelper.Q_CLIENT_ID,clientId)
                 put(OAuthHelper.Q_CLIENT_SECRET,clientSecret)
                 put(OAuthHelper.Q_GRANT_TYPE,OAuthHelper.GRANTT_TYPE)
-                put(OAuthHelper.REDIRECT_URL,redire ctUrl)
+                put(OAuthHelper.REDIRECT_URL,redirectUrl)
                 put(OAuthHelper.Q_CODE,code)
             }
         }

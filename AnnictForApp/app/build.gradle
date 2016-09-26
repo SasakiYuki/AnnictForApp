@@ -18,6 +18,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors{
+        dev {
+            buildConfigField 'String', 'API_HOST', '"api.annict.com"'
+            buildConfigField 'String', 'CLIENT_ID', '"1af7585a27a38afea0c4df1337a00363d89ebb002ec8ff9524db5bd2c3ad9515"'
+            buildConfigField 'String', 'CLIENT_SECRET', '"e517723b99b1f92694ea49e994cd653cb830a66b08853042e47787d15ace16aa"'
+            buildConfigField 'String', 'REDIRECT_URL', '"afa://yukiyamada.jp"'
+        }
+    }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -27,8 +36,22 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.2.0'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.0'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile 'com.jakewharton:kotterknife:0.1.0-SNAPSHOT'
+
+    def rxlifecycleVersion = '0.8.0'
+    compile "com.trello:rxlifecycle-kotlin:$rxlifecycleVersion"
+    compile "com.trello:rxlifecycle-components:$rxlifecycleVersion"
 }
 repositories {
     mavenCentral()
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
 }

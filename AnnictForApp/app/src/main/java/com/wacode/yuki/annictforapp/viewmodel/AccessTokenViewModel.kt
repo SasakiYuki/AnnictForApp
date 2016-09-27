@@ -1,6 +1,6 @@
 package com.wacode.yuki.annictforapp.viewmodel
 
-import com.wacode.yuki.annictforapp.utils.OAuthQueryBuilder
+import com.wacode.yuki.annictforapp.utils.OAuth.OAuthQueryBuilder
 import com.wacode.yuki.annictforapp.contract.AccessTokenContract
 import com.wacode.yuki.annictforapp.rest.OAuthAPIService
 import rx.android.schedulers.AndroidSchedulers

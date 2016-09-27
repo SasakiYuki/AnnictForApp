@@ -1,4 +1,4 @@
-package com.wacode.yuki.annictforapp.utils
+package com.wacode.yuki.annictforapp.utils.OAuth
 
 import com.wacode.yuki.annictforapp.BuildConfig
 import java.util.*
@@ -16,8 +16,8 @@ class OAuthQueryBuilder(val code:String) {
             init {
                 put(OAuthHelper.Q_CLIENT_ID,clientId)
                 put(OAuthHelper.Q_CLIENT_SECRET,clientSecret)
-                put(OAuthHelper.Q_GRANT_TYPE,OAuthHelper.GRANTT_TYPE)
-                put(OAuthHelper.REDIRECT_URL,redirectUrl)
+                put(OAuthHelper.Q_GRANT_TYPE, OAuthHelper.GRANTT_TYPE)
+                put(OAuthHelper.Q_REDIRECT_URL,redirectUrl)
                 put(OAuthHelper.Q_CODE,code)
             }
         }

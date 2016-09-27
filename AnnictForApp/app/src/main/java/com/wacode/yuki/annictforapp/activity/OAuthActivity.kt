@@ -1,5 +1,6 @@
 package com.wacode.yuki.annictforapp.activity
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,10 +8,11 @@ import android.webkit.WebView
 import butterknife.bindView
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity
 import com.wacode.yuki.annictforapp.AnnictForAppApplication
-import com.wacode.yuki.annictforapp.utils.OAuthHelper
+import com.wacode.yuki.annictforapp.utils.OAuth.OAuthHelper
 import com.wacode.yuki.annictforapp.view.OAuthWebViewClient
 import com.wacode.yuki.annictforapp.R
 import com.wacode.yuki.annictforapp.contract.AccessTokenContract
+import com.wacode.yuki.annictforapp.utils.PrefManager
 import com.wacode.yuki.annictforapp.viewmodel.AccessTokenViewModel
 
 class OAuthActivity : RxAppCompatActivity(), AccessTokenContract.AccessTokenView {
@@ -31,7 +33,9 @@ class OAuthActivity : RxAppCompatActivity(), AccessTokenContract.AccessTokenView
     }
 
     override fun storeAccessToken(accessToken: String) {
-        Log.d("accessToken",accessToken)
+        PrefManager(this).setAccessToken(accessToken)
+        startActivity(Intent(this,MainActivity::class.java))
+        finish()
     }
 
     override fun showError() {

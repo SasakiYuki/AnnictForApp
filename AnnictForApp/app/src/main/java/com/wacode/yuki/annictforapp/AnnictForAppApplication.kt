@@ -4,6 +4,7 @@ import android.accessibilityservice.AccessibilityService
 import android.app.Application
 import android.util.Log
 import com.wacode.yuki.annictforapp.rest.OAuthAPIService
+import com.wacode.yuki.annictforapp.rest.WorksApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -17,6 +18,7 @@ class AnnictForAppApplication :Application(){
     private val logging = HttpLoggingInterceptor({Log.d("API_LOG",it)}).setLevel(HttpLoggingInterceptor.Level.BASIC)
     private val client = OkHttpClient.Builder().addInterceptor(logging).build()
     private lateinit var accessTokenService:OAuthAPIService
+    private lateinit var worksApiService:WorksApiService
     override fun onCreate() {
         super.onCreate()
         setupApiClient()
@@ -31,8 +33,11 @@ class AnnictForAppApplication :Application(){
             .build()
 
         accessTokenService = retrofit.create(OAuthAPIService::class.java)
+        worksApiService = retrofit.create(WorksApiService::class.java)
     }
 
     fun getOAuthApiService() = accessTokenService
+
+    fun getWorksApiService() = worksApiService
 
 }

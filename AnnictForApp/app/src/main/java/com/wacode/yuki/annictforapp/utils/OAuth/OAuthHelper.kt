@@ -1,4 +1,4 @@
-package com.wacode.yuki.annictforapp.utils
+package com.wacode.yuki.annictforapp.utils.OAuth
 
 import android.os.Build
 import com.wacode.yuki.annictforapp.AppConfig

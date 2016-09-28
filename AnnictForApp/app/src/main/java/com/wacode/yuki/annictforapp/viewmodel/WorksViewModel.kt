@@ -26,25 +26,13 @@ class WorksViewModel(val service:WorksApiService,val context: Context):WorksCont
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe( {
-                getMeWorks(it)
+                view.showWorks(it)
             },{
                 view.showError()
                 it.printStackTrace()
         })
     }
 
-    private fun getMeWorks(entity:WorksEntity){
-        service.getMeWorks(buildQuery())
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({
-                    view.showWorks(entity,it)
-                },{
-                    view.showError()
-                    it.printStackTrace()
-                })
-
-    }
 
     @SeasonType private fun getCurrentSeason():String{
         val calendar = Calendar.getInstance()

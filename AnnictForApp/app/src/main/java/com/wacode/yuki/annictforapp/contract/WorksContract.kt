@@ -7,7 +7,7 @@ import com.wacode.yuki.annictforapp.rest.entity.WorksEntity
  */
 interface WorksContract {
     interface WorksView{
-        fun showWorks(entity:WorksEntity,meWork:WorksEntity)
+        fun showWorks(entity:WorksEntity)
         fun showError()
     }
     fun setViews(view:WorksView)

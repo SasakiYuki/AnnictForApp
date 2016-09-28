@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="annimeCardModel"
+            type="com.wacode.yuki.annictforapp.viewmodel.AnnimeCardViewModel"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/card_margin_both"
+        android:layout_marginLeft="@dimen/card_margin_side"
+        android:layout_marginRight="@dimen/card_margin_side"
+        android:layout_marginTop="@dimen/card_margin_both">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/com_card_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@{annimeCardModel.title_icon}"
+                    android:textColor="@android:color/white"
+                    android:background="@{annimeCardModel.shapeDrawable}"
+                    tools:background="@color/colorBlue500"
+                    tools:text="に" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/com_card_title_kana"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="@dimen/size_text_small"
+                        android:text="@{annimeCardModel.title_kana}"
+                        tools:text="にゅーげーむ！" />
+
+                    <TextView
+                        android:id="@+id/com_card_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/size_text_large"
+                        android:text="@{annimeCardModel.title}"
+                        tools:text="New Game!" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@mipmap/transeye" />
+
+                    <TextView
+                        android:id="@+id/com_card_watchers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/size_text_normal"
+                        android:text="@{annimeCardModel.watchers_count}"
+                        tools:text="2000" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/com_card_season_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="@{annimeCardModel.season_name}"
+                    android:textColor="@color/colorPrimary"
+                    tools:text="シーズン：2016年秋" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</layout>

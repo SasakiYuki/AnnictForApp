@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AnnictForApp</string>
+    <string name="com_card_season">シーズン:%s</string>
 </resources>

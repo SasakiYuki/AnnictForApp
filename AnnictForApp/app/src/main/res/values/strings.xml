@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AnnictForApp</string>
     <string name="com_card_season">シーズン:%s</string>
+    <string name="search_ranking_this_season">今期のランキング</string>
 </resources>

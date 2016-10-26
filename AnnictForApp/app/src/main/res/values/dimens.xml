@@ -6,6 +6,7 @@
     <dimen name="size_text_normal">16sp</dimen>
     <dimen name="size_text_small">14sp</dimen>
     <dimen name="size_text_large">18sp</dimen>
+    <dimen name="size_text_more_large">22sp</dimen>
     
     <dimen name="card_margin_side">8dp</dimen>
     <dimen name="card_margin_both">16dp</dimen>

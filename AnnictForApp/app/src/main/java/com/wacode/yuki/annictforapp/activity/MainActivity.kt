@@ -19,7 +19,7 @@ import com.wacode.yuki.annictforapp.viewmodel.WorksViewModel
 import rx.Observable
 import java.util.*
 
-class MainActivity : AppCompatActivity(),WorksContract.WorksView,AnnimeCardContract {
+class MainActivity : BaseActivity(),WorksContract.WorksView,AnnimeCardContract {
 
     private lateinit var viewModel:WorksViewModel
     private val recyclerview by bindView<RecyclerView>(R.id.main_recycler)
@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity(),WorksContract.WorksView,AnnimeCardContr
             viewModel.setViews(this)
             viewModel.getWorks()
         }
+       setToolbarText(R.string.app_name)
     }
 
     private fun setViews(){

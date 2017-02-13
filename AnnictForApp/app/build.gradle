@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 def AAVersion = '4.1.0'
+
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
@@ -39,7 +40,7 @@ android {
 kapt {
     generateStubs = true
     arguments {
-        arg("resourcePackageName",'com.example')
+        arg("resourcePackageName",'com.wacode.yuki.annictforapp')
         arg("androidManifestFile",variant.outputs[0].processResourcesTask.manifestFile)
     }
 }

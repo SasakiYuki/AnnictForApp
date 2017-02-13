@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-
+def AAVersion = '4.1.0'
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
@@ -38,6 +38,10 @@ android {
 
 kapt {
     generateStubs = true
+    arguments {
+        arg("resourcePackageName",'com.example')
+        arg("androidManifestFile",variant.outputs[0].processResourcesTask.manifestFile)
+    }
 }
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -59,6 +63,9 @@ dependencies {
     compile "com.trello:rxlifecycle-kotlin:$rxlifecycleVersion"
     compile "com.trello:rxlifecycle-components:$rxlifecycleVersion"
     kapt 'com.android.databinding:compiler:2.1.2'
+
+    kapt "org.androidannotations:androidannotations:$AAVersion"
+    compile "org.androidannotations:androidannotations-api:$AAVersion"
 }
 repositories {
     mavenCentral()
